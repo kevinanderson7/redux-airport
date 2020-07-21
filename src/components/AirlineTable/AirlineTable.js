@@ -10,12 +10,14 @@ class AirlineTable extends Component {
         <tbody>
           <tr>
             <th>Airline Name</th>
+            <th>Airline Number of Planes</th>
           </tr>
 
           {this.props.reduxState.airlineList.map((item, index) => {
             return (
               <tr key={index}>
-                <td>{item}</td>
+                <td>{item.enteredAirline}</td>
+                <td>{item.enteredAirlineNumber}</td>
               </tr>
             );
           })}
