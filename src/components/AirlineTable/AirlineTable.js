@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import AirlineList from '../AirlineList/AirlineList';
 
 class AirlineTable extends Component {
   render() {
     return (
-      <div>
-        <table>{this.props.airlineList}</table>
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <th>Airline Name</th>
+          </tr>
+          <AirlineList />
+        </tbody>
+      </table>
     );
   }
 }

@@ -23,4 +23,4 @@ const mapStoreToProps = (reduxState) => {
   };
 };
 
-export default connect(mapStoreToProps)(AirlineForm);
+// export default connect(mapStoreToProps)(AirlineForm);
