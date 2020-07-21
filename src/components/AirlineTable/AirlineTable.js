@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 class AirlineTable extends Component {
   render() {
+    console.log('Table', this.props.reduxState);
     return (
       <table>
         <tbody>
