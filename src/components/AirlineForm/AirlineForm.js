@@ -8,10 +8,10 @@ class AirlineForm extends Component {
         <h1>Redux Airport</h1>
         <input
           type="text"
-          onChange={this.handleAirlineInputChange}
+          onChange={this.props.handleAirlineInputChange}
           placeholder="Airline Name"
         />
-        <button onClick={this.handleClick}>Add Airline</button>
+        <button onClick={this.props.handleClick}>Add Airline</button>
       </div>
     );
   }
@@ -23,4 +23,4 @@ const mapStoreToProps = (reduxState) => {
   };
 };
 
-// export default connect(mapStoreToProps)(AirlineForm);
+export default connect(mapStoreToProps)(AirlineForm);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AirlineList from '../AirlineList/AirlineList';
+//
 
 class AirlineTable extends Component {
   render() {
@@ -10,7 +10,14 @@ class AirlineTable extends Component {
           <tr>
             <th>Airline Name</th>
           </tr>
-          <AirlineList />
+
+          {this.props.reduxState.airlineList.map((item, index) => {
+            return (
+              <tr key={index}>
+                <td>{item}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     );

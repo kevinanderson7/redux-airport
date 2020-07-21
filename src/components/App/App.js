@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import AirlineForm from '../AirlineForm/AirlineForm';
+import AirlineForm from '../AirlineForm/AirlineForm';
 import AirlineTable from '../AirlineTable/AirlineTable';
 
 class App extends Component {
@@ -24,14 +24,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <AirlineForm /> */}
-        <h1>Redux Airport</h1>
+        <AirlineForm
+          handleClick={this.handleClick}
+          handleAirlineInputChange={this.handleAirlineInputChange}
+        />
+        {/* <h1>Redux Airport</h1>
         <input
           type="text"
           onChange={this.handleAirlineInputChange}
           placeholder="Airline Name"
         />
-        <button onClick={this.handleClick}>Add Airline</button>
+        <button onClick={this.handleClick}>Add Airline</button> */}
         <AirlineTable />
       </div>
     );
