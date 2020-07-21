@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import AirlineForm from '../AirlineForm/AirlineForm';
+import AirlineTable from '../AirlineTable/AirlineTable';
 
 class App extends Component {
+  handleClick = () => {
+    this.props.dispatch({
+      type: 'ADD_AIRLINE_TO_LIST',
+      payload: { airline: this.state.enteredAirline },
+    });
+  };
+
+  handleAirlineInputChange = (event) => {
+    this.setState({
+      enteredAirline: event.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
-        <h1>Redux Airport</h1>
-        <input placeholder="Airline Name" />
-        <button>Add Airline</button>
-        <table>
-          {/* Airlines should be listed here */}
-        </table>
+        <AirlineForm />
+        <AirlineTable />
       </div>
     );
   }
 }
 
-export default App;
+const mapStoreToProps = (store) => {
+  return {
+    airlineList: store.airlineList,
+  };
+};
+
+export default connect(mapStoreToProps)(App);
