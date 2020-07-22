@@ -3,21 +3,26 @@ import { connect } from 'react-redux';
 import AirlineForm from '../AirlineForm/AirlineForm';
 import AirlineTable from '../AirlineTable/AirlineTable';
 import 'fontsource-roboto';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <AirlineForm />
-        {/* <h1>Redux Airport</h1>
+      <React.Fragment>
+        <CssBaseline />
+        <Container>
+          <AirlineForm />
+          {/* <h1>Redux Airport</h1>
         <input
           type="text"
           onChange={this.handleAirlineInputChange}
           placeholder="Airline Name"
         />
         <button onClick={this.handleClick}>Add Airline</button> */}
-        <AirlineTable />
-      </div>
+          <AirlineTable />
+        </Container>
+      </React.Fragment>
     );
   }
 }

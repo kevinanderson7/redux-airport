@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 class AirlineForm extends Component {
   state = {
@@ -33,20 +36,38 @@ class AirlineForm extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Redux Airport</h1>
-        <input
-          onChange={this.handleAirlineInputChange}
-          value={this.state.enteredAirline}
-          placeholder="Airline Name"
-        />
-        <input
-          onChange={this.handleAirlineNumberChange}
-          placeholder="Number of Planes"
-          value={this.state.enteredAirlineNumber}
-        />
-        <button onClick={this.handleClick}>Add Airline</button>
-      </div>
+      <Grid container spacing={3} alignItems="center">
+        <Grid item>
+          <h1>Redux Airport</h1>
+        </Grid>
+        <Grid item>
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Airline Name"
+            onChange={this.handleAirlineInputChange}
+            value={this.state.enteredAirline}
+          />
+        </Grid>
+        <Grid item>
+          <TextField
+            margin="normal"
+            id="outlined-basic"
+            label="Number of Planes"
+            onChange={this.handleAirlineNumberChange}
+            value={this.state.enteredAirlineNumber}
+          />
+        </Grid>
+        <Grid item>
+          <Button
+            margin="normal"
+            variant="contained"
+            onClick={this.handleClick}
+          >
+            Add Airline
+          </Button>
+        </Grid>
+      </Grid>
     );
   }
 }

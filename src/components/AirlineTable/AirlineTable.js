@@ -7,32 +7,35 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 class AirlineTable extends Component {
   render() {
     console.log('Table', this.props.reduxState);
     return (
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Airline Name</TableCell>
-              <TableCell>Airline Number of Planes</TableCell>
-            </TableRow>
-          </TableHead>
+      <Grid container spacing={3}>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Airline Name</TableCell>
+                <TableCell>Airline Number of Planes</TableCell>
+              </TableRow>
+            </TableHead>
 
-          {this.props.reduxState.airlineList.map((item, index) => {
-            return (
-              <TableBody>
-                <TableRow key={index}>
-                  <TableCell>{item.enteredAirline}</TableCell>
-                  <TableCell>{item.enteredAirlineNumber}</TableCell>
-                </TableRow>
-              </TableBody>
-            );
-          })}
-        </Table>
-      </TableContainer>
+            {this.props.reduxState.airlineList.map((item, index) => {
+              return (
+                <TableBody>
+                  <TableRow key={index}>
+                    <TableCell>{item.enteredAirline}</TableCell>
+                    <TableCell>{item.enteredAirlineNumber}</TableCell>
+                  </TableRow>
+                </TableBody>
+              );
+            })}
+          </Table>
+        </TableContainer>
+      </Grid>
     );
   }
 }
