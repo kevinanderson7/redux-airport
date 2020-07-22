@@ -37,10 +37,7 @@ class AirlineForm extends Component {
   render() {
     return (
       <Grid container spacing={3} alignItems="center">
-        <Grid item>
-          <h1>Redux Airport</h1>
-        </Grid>
-        <Grid item>
+        <Grid item xs>
           <TextField
             margin="normal"
             id="outlined-basic"
@@ -49,7 +46,7 @@ class AirlineForm extends Component {
             value={this.state.enteredAirline}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs>
           <TextField
             margin="normal"
             id="outlined-basic"

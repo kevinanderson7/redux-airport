@@ -12,6 +12,7 @@ class App extends Component {
       <React.Fragment>
         <CssBaseline />
         <Container>
+          <h1>Redux Airport</h1>
           <AirlineForm />
           {/* <h1>Redux Airport</h1>
         <input
