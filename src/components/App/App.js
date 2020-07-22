@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AirlineForm from '../AirlineForm/AirlineForm';
 import AirlineTable from '../AirlineTable/AirlineTable';
+import 'fontsource-roboto';
 
 class App extends Component {
   render() {
